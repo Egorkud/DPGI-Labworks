@@ -6,16 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Grid>
 
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
-        <Label Content="Label" HorizontalAlignment="Center"/>
-
-        <!-- Заміна контейнера та розміщення TextBox -->
-        <TextBox Text="TextBox" Width="500"/>
-        <TextBox Text="TextBox" Width="500"/>
-        <TextBox Text="TextBox" Width="500"/>
-        <TextBox Text="TextBox" Width="500"/>
-        <Button Content="Button" Width="150" HorizontalAlignment="Center" Margin="50"/>
-    </StackPanel>
-    
+    </Grid>
 </Window>
