@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+    <DockPanel>
+        <Label Content="Label" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="5"/>
+        <!--Додаємо TextBox зліва та справа-->
+
+        <TextBox Text="TextBox" DockPanel.Dock="Left" Margin="10" Height="300" Width="350"/>
+        <TextBox Text="TextBox" DockPanel.Dock="Right" Margin="10" Height="300" Width="350"/>
+        <Button Content="Button" DockPanel.Dock="Bottom" Width="75" Height="23" 
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+    </DockPanel>
 </Window>
