@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="TextEditor" Height="450" Width="800">
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-    </Grid>
+		<!-- Верхня рамка для меню -->
+		<Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+			<StackPanel Orientation="Horizontal" >
+
+				<Button ToolTip="Відкрити">
+					<Image Source="images/folder.png" Height="47" Width="47"/>
+				</Button>
+
+				<Button ToolTip="Стерти">
+					<Image Source="images/broom.png" Height="47" Width="47"/>
+				</Button>
+
+				<Button ToolTip="Копіювати">
+					<Image Source="images/copy-two-paper-sheets-interface-symbol.png" Height="47" Width="47"/>
+				</Button>
+
+				<Button ToolTip="Вставити">
+					<Image Source="images/paste.png" Height="47" Width="47"/>
+				</Button>
+			</StackPanel>
+		</Border>
+	</Grid>
 </Window>

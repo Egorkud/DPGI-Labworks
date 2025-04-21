@@ -1,11 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+
+	<!-- Вилучаємо файли зі списку None -->
+	<ItemGroup>
+		<!-- None — це тип файлу, який не використовується напряму під час компіляції -->
+		<!-- Remove каже: не включай ці файли як "None" оскільки далі змінюємо їх тип -->
+		<None Remove="images\folder.png" />
+		<None Remove="images\broom.png" />
+		<None Remove="images\copy-two-paper-sheets-interface-symbol.png" />
+		<None Remove="images\paste.png" />
+	</ItemGroup>
+
+	<!-- Додаємо ці файли як ресурси -->
+	<ItemGroup>
+		<!-- Resource — це тип файлу, який WPF розпізнає як вбудований ресурс -->
+		<Resource Include="images\copy-two-paper-sheets-interface-symbol.png"/>
+		<Resource Include="images\folder.png" />
+		<Resource Include="images\broom.png" />
+		<Resource Include="images\paste.png" />
+	</ItemGroup>
 
 </Project>
