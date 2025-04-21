@@ -6,31 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Grid>
 
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <WrapPanel Width="700" Orientation="Horizontal">
-            <!-- Label для першого рядка -->
-            <Label Content="Label" VerticalAlignment="Center"/>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-
-            <!-- Label для другого рядка -->
-            <Label Content="Label" VerticalAlignment="Center"/>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-            <TextBox Width="80" Height="26">TextBox</TextBox>
-        </WrapPanel>
-        <Button Content="Button" Width="90" Height="26" Margin="0,30,0,0" HorizontalAlignment="Center" />
-    </StackPanel>
+    </Grid>
 </Window>
