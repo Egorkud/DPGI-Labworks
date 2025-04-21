@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Background="Cyan">
 
-    </Grid>
+    <Canvas>
+        <Label Content="Label" Canvas.Left="20" Canvas.Top="20" Height="25" Width="44" />
+        <TextBox Text="Text" Width="30" Height="20" Canvas.Left="40" Canvas.Top="40"/>
+        <Button Content="Button" Width="45" Height="20" Canvas.Left="60" Canvas.Top="60"/>
+    </Canvas>
 </Window>
