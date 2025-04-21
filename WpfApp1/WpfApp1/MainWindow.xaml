@@ -6,33 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-    <Grid ShowGridLines="True">
-        
-        <!-- Колонки -->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <Grid>
 
-        <!-- Рядки -->
-        <Grid.RowDefinitions>
-            <!-- 1 частина -->
-            <RowDefinition Height="1*" />
-            <!-- 4 частина -->
-            <RowDefinition Height="4*" />
-            <!-- автоматично -->
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <!-- Елементи у другому стовпці -->
-        <Label Content="Label" Grid.Row="0" Grid.Column="1" 
-               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        
-        <TextBox Text="TextBox" Grid.Row="1" TextWrapping="Wrap" 
-                 AcceptsReturn="True" Grid.ColumnSpan="3"/>
-        
-        <Button Content="Button" Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </Window>
