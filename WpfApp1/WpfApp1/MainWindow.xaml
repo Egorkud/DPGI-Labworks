@@ -33,19 +33,23 @@
 				Background="{StaticResource LinearPanelBrush}">
 			<StackPanel Orientation="Horizontal" >
 
-				<Button ToolTip="Відкрити" Style="{StaticResource ButtonStyle}">
+				<Button ToolTip="Відкрити" Style="{StaticResource ButtonStyle}"
+						Command="Open">
 					<Image Source="images/folder.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Стерти" Style="{StaticResource ButtonStyle}">
-					<Image Source="images/broom.png" Height="47" Width="47"/>
+				<Button ToolTip="Стерти" Style="{StaticResource ButtonStyle}"
+						Command="Delete">
+                    <Image Source="images/broom.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Копіювати" Style="{StaticResource ButtonStyle}">
+				<Button ToolTip="Копіювати" Style="{StaticResource ButtonStyle}"
+						Command="Copy" CommandTarget="{Binding ElementName=textBox}">
 					<Image Source="images/copy-two-paper-sheets-interface-symbol.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Вставити" Style="{StaticResource ButtonStyle}">
+				<Button ToolTip="Вставити" Style="{StaticResource ButtonStyle}"
+						Command="Paste" CommandTarget="{Binding ElementName=textBox}">
 					<Image Source="images/paste.png" Height="47" Width="47"/>
 				</Button>
 			</StackPanel>
@@ -60,10 +64,13 @@
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
 
-				<TextBox Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" />
+				<TextBox x:Name="textBox"
+						 Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
+						 FontSize="{Binding ElementName=fontSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
 				<DockPanel Grid.Row="1" LastChildFill="False">
-					<Button Content="OK" DockPanel.Dock="Bottom" Width="34" Height="30" Margin="5"/>
+					<Button Content="OK" DockPanel.Dock="Bottom" Width="34" Height="30" Margin="5"
+							Command="ApplicationCommands.Save"/>
 					
 					<Label Content="Розмір шрифту:" VerticalAlignment="Center" Margin="4"/>
 				
