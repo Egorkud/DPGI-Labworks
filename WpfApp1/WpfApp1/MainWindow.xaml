@@ -34,5 +34,22 @@
 				</Button>
 			</StackPanel>
 		</Border>
+
+		<!-- Рамка з текстовою областю -->
+		<Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+			<Grid  Margin="10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<TextBox Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" />
+
+				<DockPanel Grid.Row="1" LastChildFill="False">
+					<Button Content="OK" DockPanel.Dock="Bottom" Width="34" Height="30" Margin="5"/>
+				</DockPanel>
+			</Grid>
+		</Border>
+
 	</Grid>
 </Window>
