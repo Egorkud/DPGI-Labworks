@@ -1,0 +1,94 @@
+﻿<Window x:Class="Lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3"
+        mc:Ignorable="d"
+        Title="Гра 'Ворожка'" Height="450" Width="800">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadowEffect" Color="Black" BlurRadius="10" ShadowDepth="2"/>
+        <DropShadowEffect x:Key="TextBoxShadow" Color="#888" BlurRadius="6" ShadowDepth="1"/>
+
+        <!-- Градієнтовий фон -->
+        <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Blue" Offset="0"/>
+            <GradientStop Color="Yellow" Offset="0.25"/>
+        </LinearGradientBrush>
+
+        <!-- Кнопка -->
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="#FF4facfe"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderBrush" Value="#FF00f2fe"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" ShadowDepth="2" BlurRadius="4"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BackgroundBrush}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Поле вводу питання -->
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,0,0,15">
+            <Label Content="Що ви хочете запитати?" FontWeight="Bold" FontSize="14" Foreground="White"/>
+            <TextBox x:Name="QuestionTextBox"
+                 Height="35"
+                 FontSize="14"
+                 Padding="8"
+                 Background="#FFF"
+                 BorderBrush="#CCC"
+                 BorderThickness="1"
+                 Effect="{DynamicResource TextBoxShadow}"/>
+        </StackPanel>
+
+        <!-- Кнопка -->
+        <Button x:Name="GetAnswerButton"
+            Grid.Row="1"
+            Content="Спитати долю"
+            Style="{StaticResource CustomButtonStyle}"
+            Width="160"
+            HorizontalAlignment="Left"
+            Command="{x:Static local:MainWindow.GetAnswerCommand}"/>
+
+        <!-- Відповідь -->
+        <Border Grid.Row="2"
+            Background="#CCFFFFFF"
+            CornerRadius="10"
+            Padding="15"
+            Margin="0,20,0,0"
+            Effect="{StaticResource DropShadowEffect}">
+            <TextBlock x:Name="AnswerLabel"
+               Text="Очікуємо питання"
+               FontSize="18"
+               FontWeight="SemiBold"
+               TextAlignment="Center"
+               Foreground="#333"/>
+        </Border>
+    </Grid>
+</Window>
