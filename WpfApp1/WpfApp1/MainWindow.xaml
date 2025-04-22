@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="TextEditor" Height="450" Width="800">
-	
+
+	<Window.Resources>
+
+		<LinearGradientBrush x:Key="LinearPanelBrush" StartPoint="0,0" EndPoint="1,1">
+			<GradientStop Color="Yellow" Offset="0.0"/>
+			<GradientStop Color="Cyan" Offset="0.5"/>
+			<GradientStop Color="Yellow" Offset="1.0"/>
+		</LinearGradientBrush>
+
+		<Style x:Key="ButtonStyle" TargetType="Button">
+			<Setter Property="Margin" Value="5"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="White"/>
+		</Style>
+	</Window.Resources>
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -14,29 +29,31 @@
 		</Grid.RowDefinitions>
 
 		<!-- Верхня рамка для меню -->
-		<Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+		<Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+				Background="{StaticResource LinearPanelBrush}">
 			<StackPanel Orientation="Horizontal" >
 
-				<Button ToolTip="Відкрити">
+				<Button ToolTip="Відкрити" Style="{StaticResource ButtonStyle}">
 					<Image Source="images/folder.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Стерти">
+				<Button ToolTip="Стерти" Style="{StaticResource ButtonStyle}">
 					<Image Source="images/broom.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Копіювати">
+				<Button ToolTip="Копіювати" Style="{StaticResource ButtonStyle}">
 					<Image Source="images/copy-two-paper-sheets-interface-symbol.png" Height="47" Width="47"/>
 				</Button>
 
-				<Button ToolTip="Вставити">
+				<Button ToolTip="Вставити" Style="{StaticResource ButtonStyle}">
 					<Image Source="images/paste.png" Height="47" Width="47"/>
 				</Button>
 			</StackPanel>
 		</Border>
 
 		<!-- Рамка з текстовою областю -->
-		<Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+		<Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+				Background="{StaticResource LinearPanelBrush}">
 			<Grid  Margin="10">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*"/>
