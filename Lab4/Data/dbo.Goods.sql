@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Goods] 
+(
+    [Id] INT IDENTITY(1,1) PRIMARY KEY,
+    [Articule] NVARCHAR(50) NOT NULL,
+    [Unit] NVARCHAR(20) NULL,
+    [Amount] DECIMAL(18,2) NOT NULL DEFAULT (0),
+    [Price] DECIMAL(18,2) NULL
+);
