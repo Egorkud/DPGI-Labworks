@@ -64,7 +64,8 @@
                  Background="#FFF"
                  BorderBrush="#CCC"
                  BorderThickness="1"
-                 Effect="{DynamicResource TextBoxShadow}"/>
+                 Effect="{DynamicResource TextBoxShadow}"
+                 SpellCheck.IsEnabled="True" Language="uk"/>
         </StackPanel>
 
         <!-- Кнопка -->
