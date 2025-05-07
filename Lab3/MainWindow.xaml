@@ -11,11 +11,18 @@
         <DropShadowEffect x:Key="DropShadowEffect" Color="Black" BlurRadius="10" ShadowDepth="2"/>
         <DropShadowEffect x:Key="TextBoxShadow" Color="#888" BlurRadius="6" ShadowDepth="1"/>
 
-        <!-- Градієнтовий фон -->
-        <LinearGradientBrush x:Key="BackgroundBrush" StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="Blue" Offset="0"/>
-            <GradientStop Color="Yellow" Offset="0.25"/>
-        </LinearGradientBrush>
+        <VisualBrush x:Key="BackgroundBrush" TileMode="Tile" Viewport="0,0,1,450" ViewportUnits="Absolute" Stretch="None">
+            <VisualBrush.Visual>
+                <Rectangle Width="1" Height="450">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" MappingMode="RelativeToBoundingBox">
+                            <GradientStop Color="Blue" Offset="0"/>
+                            <GradientStop Color="Yellow" Offset="0.3"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </VisualBrush.Visual>
+        </VisualBrush>
 
         <!-- Кнопка -->
         <Style x:Key="CustomButtonStyle" TargetType="Button">
