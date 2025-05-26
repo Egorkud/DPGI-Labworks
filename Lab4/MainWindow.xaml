@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Перегляд товарів" Height="450" Width="600" Loaded="Window_Loaded">
 
-    </Grid>
+    <DockPanel>
+        <Grid DataContext="{Binding ElementName=listProducts, Path=SelectedItem}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Список товарів -->
+            <ListBox Name="listProducts"
+                         Grid.Row="0"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="2"
+                         Margin="0,0,0,3"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ItemsSource="{Binding}"
+                         DisplayMemberPath="Name" 
+                         SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+
+            <!-- Виведення деталей товару -->
+            <TextBlock Grid.Row="1" Margin="5">ID:</TextBlock>
+            <TextBox x:Name="txtId" Grid.Row="1" Grid.Column="1"
+                         Text="{Binding Path=Id, Mode=TwoWay}" 
+                         Focusable="True" />
+
+            <TextBlock Grid.Row="2" Margin="5">Артикул:</TextBlock>
+            <TextBox x:Name="txtArticleNum" Grid.Row="2" Grid.Column="1"
+                         Text="{Binding Path=Articule, Mode=TwoWay}" 
+                         Focusable="True" />
+
+            <TextBlock Grid.Row="3" Margin="5">Назва:</TextBlock>
+            <TextBox x:Name="txtName" Grid.Row="3" Grid.Column="1"
+                         Text="{Binding Path=Name, Mode=TwoWay}" 
+                         Focusable="True" />
+
+            <TextBlock Grid.Row="4" Margin="5">Одиниця виміру:</TextBlock>
+            <TextBox x:Name="txtUnit" Grid.Row="4" Grid.Column="1"
+                         Text="{Binding Path=Unit, Mode=TwoWay}" 
+                         Focusable="True" />
+
+            <TextBlock Grid.Row="5" Margin="5">Кількість:</TextBlock>
+            <TextBox x:Name="txtQuantity" Grid.Row="5" Grid.Column="1"
+                         Text="{Binding Path=Amount, Mode=TwoWay}" 
+                         Focusable="True" />
+
+            <TextBlock Grid.Row="6" Margin="5">Ціна:</TextBlock>
+            <TextBox x:Name="txtPrice" Grid.Row="6" Grid.Column="1"
+                         Text="{Binding Path=Price, Mode=TwoWay}" 
+                         Focusable="True" />
+        </Grid>
+    </DockPanel>
 </Window>

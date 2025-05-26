@@ -17,11 +17,11 @@ namespace Lab4
         String connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DPGI"].ConnectionString;
 
         // Метод читання даних з DataTable
-        DataTable dt = null;// Посилання на об'єкт DataTable
+        DataTable? dt = null;// Посилання на об'єкт DataTable
 
-        public DataTable TableLoad()
+        public DataTable? TableLoad()
         {
-            if (dt == null) return dt;// Завантажимо таблицю лише один раз
+            if (dt != null) return dt;// Завантажимо таблицю лише один раз
             // Заповнюємо об'єкт таблиці даними з БД
             dt = new DataTable();
 
@@ -32,16 +32,16 @@ namespace Lab4
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 //Завантажує дані 
-                command.CommandText = "SELECT Id, Articule, Unit, Amount, Price FROM Goods";
+                command.CommandText = "SELECT Id, Articule, Name, Unit, Amount, Price FROM Goods";
 
                 try
                 {
                     // Метод сам відкриває БД і сам її закриває
                     adapter.Fill(dt);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Помилка підключення до БД");
+                    MessageBox.Show($"Помилка підключення до БД: \n{ex.Message}");
                 }
             }
             return dt;
