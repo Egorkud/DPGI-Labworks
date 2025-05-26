@@ -47,5 +47,56 @@ namespace Lab4
             return dt;
         }
 
+        public void InsertGood(string articule, string name, string unit, decimal amount, decimal price)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Goods (Articule, Name, Unit, Amount, Price) VALUES (@Articule, @Name, @Unit, @Amount, @Price)";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@Articule", articule);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Unit", unit);
+                command.Parameters.AddWithValue("@Amount", amount);
+                command.Parameters.AddWithValue("@Price", price);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        public void UpdateGood(int id, string articule, string name, string unit, decimal amount, decimal price)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Goods SET Articule = @Articule, Name = @Name, Unit = @Unit, Amount = @Amount, Price = @Price WHERE Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@Articule", articule);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Unit", unit);
+                command.Parameters.AddWithValue("@Amount", amount);
+                command.Parameters.AddWithValue("@Price", price);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void DeleteGood(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Goods WHERE Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@Id", id);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

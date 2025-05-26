@@ -8,6 +8,13 @@
         Title="Перегляд товарів" Height="450" Width="600" Loaded="Window_Loaded">
 
     <DockPanel>
+        <!-- Панель інструментів -->
+        <ToolBar DockPanel.Dock="Top">
+            <Button Name="btnCreate" Content="Create" Click="btnCreate_Click"/>
+            <Button Name="btnUpdate" Content="Update" Click="btnUpdate_Click"/>
+            <Button Name="btnDelete" Content="Delete" Click="btnDelete_Click"/>
+        </ToolBar>
+
         <Grid DataContext="{Binding ElementName=listProducts, Path=SelectedItem}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
